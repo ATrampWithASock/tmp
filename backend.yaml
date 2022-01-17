@@ -7,11 +7,11 @@
       clone: yes
       update: yes
   - name: 'installing maven'
-    command: chdir=/home/spring-petclinic-rest
     apt:
+      dest: /home/spring-petclinic-rest
       name: maven
       state: present
       update_cache: true
   - name: 'starting up the backend'
-    command: chdir=/home/spring-petclinic-rest
     command: ./mvnw spring-boot:run
+      dest: /home/spring-petclinic-rest
